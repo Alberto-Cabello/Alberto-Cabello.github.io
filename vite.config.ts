@@ -12,6 +12,8 @@ export default defineConfig({
         portada: fileURLToPath(new URL('./index.html', import.meta.url)),
         casoAgentes: fileURLToPath(new URL('./casos/red-de-agentes/index.html', import.meta.url)),
         demoAgentes: fileURLToPath(new URL('./casos/red-de-agentes/demo/index.html', import.meta.url)),
+        casoStudy: fileURLToPath(new URL('./casos/app-de-estudio/index.html', import.meta.url)),
+        demoStudy: fileURLToPath(new URL('./casos/app-de-estudio/demo/index.html', import.meta.url)),
       },
     },
   },

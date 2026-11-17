@@ -1,0 +1,46 @@
+/* Generado desde el tablero DemoStudy: tokens del modo y CSS del tablero, acotados a .v-esc. */
+:root:not([data-theme="light"]) .v-esc { --bg: #0B0B0C; --fg: #F2F0EB; --muted: #A09D96; --line: #29292B; --panel: #141415; --inner: #222224; --accent: #FF5B2E; --accent-text: #FF7A55; --accent-soft: rgba(255,91,46,0.12); --on-accent: #0B0B0C; --shadow: rgba(0,0,0,0.75); }
+:root[data-theme="light"] .v-esc { --bg: #F3F1EC; --fg: #111111; --muted: #55524C; --line: #DAD6CC; --panel: #FFFFFF; --inner: #ECE9E2; --accent: #B8350F; --accent-text: #B8350F; --accent-soft: rgba(184,53,15,0.09); --on-accent: #FFFFFF; --shadow: rgba(60,40,20,0.35); }
+.v-esc .in{animation:in .6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes in{from{opacity:0;transform:translateY(14px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.v-esc .scr{animation:scr .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes scr{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.v-esc .pop{animation:pop .4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.v-esc .btn{transition:transform .2s ease}
+.v-esc .btn:hover{transform:translateY(-2px)}
+.v-esc .tag{position:relative;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;color:var(--fg)}
+.v-esc .tag::before,.v-esc .tag::after{content:"";position:absolute;width:9px;height:9px;border:0 solid var(--accent)}
+.v-esc .tag::before{left:0;top:0;border-left-width:2px;border-top-width:2px}
+.v-esc .tag::after{right:0;bottom:0;border-right-width:2px;border-bottom-width:2px}
+.v-esc .stage{perspective:1700px}
+.v-esc .tilt{transform:rotateY(-18deg) rotateX(8deg) rotateZ(-3deg);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.v-esc .stage:hover .tilt,.v-esc .stage:focus-within .tilt{transform:rotateY(-4deg) rotateX(2deg) rotateZ(0deg)}
+.v-esc .float{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.v-esc .appscroll{scrollbar-width:none}
+.v-esc .appscroll::-webkit-scrollbar{display:none}
+.v-esc .tap{transition:transform .15s ease,background .25s,border-color .25s}
+.v-esc .tap:active{transform:scale(.97)}
+.v-esc .hot{animation:hot 1.4s ease-out infinite}
+@keyframes hot{0%{box-shadow:0 0 0 0 var(--b)}100%{box-shadow:0 0 0 10px transparent}}
+.v-esc .flipw{perspective:900px}
+.v-esc .flip{position:relative;transition:transform .6s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.v-esc .flip.on{transform:rotateY(180deg)}
+.v-esc .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.v-esc .back{transform:rotateY(180deg)}
+.v-esc .toast{animation:toast 4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes toast{0%{opacity:0;transform:translateY(-20px) scale(.95)}10%,85%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-10px)}}
+.v-esc .flame{animation:flame 1.2s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes flame{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.v-esc .bob{animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.v-esc .ring{transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)}
+.v-esc .bar{transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.v-esc .sw{transition:transform .2s ease}
+.v-esc .sw:hover{transform:scale(1.08)}
+.v-esc .navb{transition:background .25s,color .25s,border-color .25s}
+@media (max-width: 560px){.v-esc .phone{width:310px !important;height:640px !important}
+.v-esc .stage{min-height:700px !important}}
+@media (prefers-reduced-motion: reduce){.v-esc *{animation:none !important;transition:none !important}
+.v-esc .tilt{transform:rotateY(-6deg) rotateX(3deg)}}

@@ -1,0 +1,150 @@
+/* Tokens del caso 02 (tableros CasoStudy y CasoStudyMovil). */
+:root,
+:root[data-theme="dark"] {
+  --after: #17120F; --grid: rgba(255,255,255,0.05); --accent-soft: rgba(255,91,46,0.14);
+  --paper: #EDEAE3; --paper-fg: #1A1A1A; --paper-line: #CFCAC0; --paper-muted: #5E5A52; --phone: #2A2A2D;
+}
+:root[data-theme="light"] {
+  --after: #FBEDE6; --grid: rgba(0,0,0,0.06); --accent-soft: rgba(184,53,15,0.10);
+  --paper: #FFFFFF; --paper-fg: #1A1A1A; --paper-line: #DCD8CF; --paper-muted: #5E5A52; --phone: #1C1C1E;
+}
+.caso [id] { scroll-margin-top: 96px; }
+.movil-raiz.caso [id] { scroll-margin-top: 70px; }
+/* Desplazamiento horizontal con 16 px de margen al encajar (como en el caso 01). */
+.movil-raiz .hsc { scroll-padding-inline: 16px; }
+
+/* ── Escritorio (CSS del tablero CasoStudy) ── */
+.v-esc .ln{display:block;overflow:hidden;padding-bottom:0.08em}
+.v-esc .w{display:inline-block;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{transform:translateY(110%)}to{transform:none}}
+.v-esc .fade{animation:fade 1s ease .8s both}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.v-esc .rv{animation:reveal linear both;animation-timeline:view();animation-range:entry 5% cover 30%}
+@keyframes reveal{from{opacity:0;transform:translateY(56px)}to{opacity:1;transform:none}}
+.v-esc .rvl{display:block;overflow:hidden}
+.v-esc .rvl > span{display:block;animation:rise linear both;animation-timeline:view();animation-range:entry 10% cover 30%}
+.v-esc .tag{position:relative;display:inline-flex;align-items:center;gap:8px;padding:7px 13px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;color:var(--fg)}
+.v-esc .tag::before,.v-esc .tag::after{content:"";position:absolute;width:9px;height:9px;border:0 solid var(--accent)}
+.v-esc .tag::before{left:0;top:0;border-left-width:2px;border-top-width:2px}
+.v-esc .tag::after{right:0;bottom:0;border-right-width:2px;border-bottom-width:2px}
+.v-esc .tag.mut{color:var(--muted)}
+.v-esc .tag.mut::before,.v-esc .tag.mut::after{border-color:var(--muted)}
+.v-esc .tag.solid{background:var(--bg)}
+.v-esc .cta{position:relative;overflow:hidden}
+.v-esc .cta::after{content:"";position:absolute;inset:0;background:var(--fg);transform:translateY(101%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.v-esc .cta:hover::after{transform:none}
+.v-esc .cta > span{position:relative;z-index:1;transition:color .45s}
+.v-esc .cta:hover > span{color:var(--bg)}
+.v-esc .pulse{animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--accent)}100%{box-shadow:0 0 0 14px transparent}}
+.v-esc .lift{transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s}
+.v-esc .lift:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px var(--accent);border-color:var(--accent)}
+.v-esc .hand{font-family:Caveat,'Comic Sans MS',cursive;font-weight:700;letter-spacing:0}
+.v-esc .desk .it{position:absolute;filter:blur(4px);opacity:.78;transition:filter .45s ease,opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.v-esc .desk .it:hover{filter:none;opacity:1;transform:rotate(0deg) scale(1.08) !important;z-index:5}
+.v-esc .drift{animation:drift 5s ease-in-out infinite}
+@keyframes drift{0%,100%{translate:0 0}50%{translate:3px -5px}}
+.v-esc .pc .was{background-image:linear-gradient(var(--muted),var(--muted));background-repeat:no-repeat;background-position:0 55%;background-size:0% 2px}
+.v-esc .pc.go .was{animation:strikeT .8s cubic-bezier(.7,0,.2,1) both}
+@keyframes strikeT{to{background-size:100% 2px;opacity:.6}}
+.v-esc .pc .arw{transform:scaleX(0);transform-origin:left}
+.v-esc .pc.go .arw{animation:arw .5s cubic-bezier(.7,0,.2,1) both}
+@keyframes arw{to{transform:scaleX(1)}}
+.v-esc .pc .now{opacity:0;filter:blur(10px);transform:translateY(8px)}
+.v-esc .pc.go .now{animation:nowT .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes nowT{to{opacity:1;filter:none;transform:none}}
+.v-esc .bigf{opacity:.25;filter:blur(14px);letter-spacing:0.02em}
+.v-esc .bigf.go{animation:bigf 1.6s cubic-bezier(.2,.8,.2,1) 3.4s both}
+@keyframes bigf{to{opacity:1;filter:none;letter-spacing:-0.045em}}
+.v-esc .lay{transition:opacity .7s ease,filter .7s ease}
+.v-esc .meter{transition:width .7s cubic-bezier(.7,0,.2,1)}
+.v-esc .dbtn{transition:background .3s,color .3s,border-color .3s}
+.v-esc .shim{background-image:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.16) 50%,transparent 70%);background-size:220% 100%;animation:shim 1.4s linear infinite}
+@keyframes shim{from{background-position:120% 0}to{background-position:-120% 0}}
+.v-esc .nd{animation:nd 1.6s ease-in-out infinite}
+@keyframes nd{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.v-esc .flowl{stroke-dasharray:4 8;animation:flowl 1.2s linear infinite}
+@keyframes flowl{to{stroke-dashoffset:-24}}
+.v-esc .ride{animation:ride 6s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes ride{0%{left:12%;opacity:0}6%{left:12%;opacity:1}20%,32%{left:62%}44%,54%{left:12%}68%,88%{left:62%;opacity:1}96%,100%{left:62%;opacity:0}}
+.v-esc .notesv{opacity:0;animation:notesv 6s ease infinite}
+@keyframes notesv{0%,30%{opacity:0;transform:translateY(6px)}34%,52%{opacity:1;transform:none}56%,100%{opacity:0}}
+.v-esc .stamp{opacity:0;animation:stamp 6s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes stamp{0%,70%{opacity:0;transform:scale(1.6) rotate(-12deg)}76%,94%{opacity:1;transform:scale(1) rotate(-8deg)}100%{opacity:0}}
+.v-esc .badge{animation:badge 8s cubic-bezier(.2,.8,.2,1) infinite both}
+@keyframes badge{0%{opacity:.35;transform:scale(.9)}8%{opacity:1;transform:scale(1.15)}12%,90%{opacity:1;transform:none}100%{opacity:.35;transform:scale(.9)}}
+.v-esc .dayd{animation:dayd 7s ease infinite both}
+@keyframes dayd{0%,4%{background:var(--inner);transform:scale(.9)}10%,92%{background:var(--accent);transform:none}100%{background:var(--inner)}}
+.v-esc .shieldd{animation:shieldd 7s ease infinite both}
+@keyframes shieldd{0%,40%{opacity:0;transform:scale(.6)}46%,92%{opacity:1;transform:none}100%{opacity:0}}
+.v-esc .say{opacity:0;animation:say 9s ease infinite}
+@keyframes say{0%,2%{opacity:0;transform:translateY(8px)}6%,30%{opacity:1;transform:none}34%,100%{opacity:0}}
+.v-esc .blinkeye{transform-box:fill-box;transform-origin:center;animation:blinke 4s ease infinite}
+@keyframes blinke{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.v-esc .bob{animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.v-esc .nums .num{opacity:.2;filter:blur(10px)}
+.v-esc .nums.go .num{animation:nowT 1s cubic-bezier(.2,.8,.2,1) both}
+.v-esc .ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:6}
+.v-esc .ba:focus-within .knob{box-shadow:0 0 0 4px var(--bg),0 0 0 6px var(--accent)}
+.v-esc .lockb{transition:all .7s cubic-bezier(.7,0,.2,1)}
+@media (max-width: 760px){.v-esc .tlrow{grid-template-columns:repeat(5, minmax(120px, 1fr)) !important}
+.v-esc .honly{display:none !important}}
+@media (prefers-reduced-motion: reduce){.v-esc *{animation:none !important;transition:none !important}
+.v-esc .pc .now,.v-esc .nums .num{opacity:1;filter:none;transform:none}
+.v-esc .pc .was{background-size:100% 2px}
+.v-esc .pc .arw{transform:none}
+.v-esc .bigf{opacity:1;filter:none;letter-spacing:-0.045em}
+.v-esc .notesv,.v-esc .stamp,.v-esc .shieldd{opacity:0}
+.v-esc .say.s1{opacity:1}
+.v-esc .ride{left:62%}}
+
+/* ── Móvil (CSS del tablero CasoStudyMovil) ── */
+.movil-raiz .ln{display:block;overflow:hidden;padding-bottom:0.08em}
+.movil-raiz .w{display:inline-block;animation:m-rise 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes m-rise{from{transform:translateY(110%)}to{transform:none}}
+.movil-raiz .fade{animation:m-fade 1s ease .7s both}
+@keyframes m-fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.movil-raiz .rv{animation:m-reveal linear both;animation-timeline:view();animation-range:entry 5% cover 25%}
+@keyframes m-reveal{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+.movil-raiz .tag{position:relative;display:inline-flex;align-items:center;gap:7px;padding:6px 11px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;color:var(--fg)}
+.movil-raiz .tag::before,.movil-raiz .tag::after{content:"";position:absolute;width:8px;height:8px;border:0 solid var(--accent)}
+.movil-raiz .tag::before{left:0;top:0;border-left-width:2px;border-top-width:2px}
+.movil-raiz .tag::after{right:0;bottom:0;border-right-width:2px;border-bottom-width:2px}
+.movil-raiz .tag.mut{color:var(--muted)}
+.movil-raiz .tag.mut::before,.movil-raiz .tag.mut::after{border-color:var(--muted)}
+.movil-raiz .tag.solid{background:var(--bg)}
+.movil-raiz .hsc{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.movil-raiz .hsc::-webkit-scrollbar{display:none}
+.movil-raiz .hsc > *{flex:0 0 auto;scroll-snap-align:start}
+.movil-raiz .pulse{animation:m-pulse 1.8s ease-out infinite}
+@keyframes m-pulse{0%{box-shadow:0 0 0 0 var(--accent)}100%{box-shadow:0 0 0 12px transparent}}
+.movil-raiz .hand{font-family:Caveat,'Comic Sans MS',cursive;font-weight:700;letter-spacing:0}
+.movil-raiz .nt{transition:opacity .6s ease}
+.movil-raiz .pc .was{background-image:linear-gradient(var(--muted),var(--muted));background-repeat:no-repeat;background-position:0 55%;background-size:0% 2px}
+.movil-raiz .pc.go .was{animation:m-strikeT .8s cubic-bezier(.7,0,.2,1) both}
+@keyframes m-strikeT{to{background-size:100% 2px;opacity:.6}}
+.movil-raiz .pc .now{opacity:0;transform:translateY(8px)}
+.movil-raiz .pc.go .now{animation:m-nowT .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes m-nowT{to{opacity:1;transform:none}}
+.movil-raiz .lay{transition:opacity .6s ease,filter .6s ease}
+.movil-raiz .meter{transition:width .6s cubic-bezier(.7,0,.2,1)}
+.movil-raiz .rail{position:absolute;inset:0;animation:m-ride 6s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes m-ride{0%{transform:translateX(0);opacity:0}6%{transform:translateX(0);opacity:1}20%,32%{transform:translateX(50%)}44%,54%{transform:translateX(0)}68%,88%{transform:translateX(50%);opacity:1}96%,100%{transform:translateX(50%);opacity:0}}
+.movil-raiz .notesv{opacity:0;animation:m-notesv 6s ease infinite}
+@keyframes m-notesv{0%,30%{opacity:0}34%,52%{opacity:1}56%,100%{opacity:0}}
+.movil-raiz .stamp{opacity:0;animation:m-stamp 6s ease infinite}
+@keyframes m-stamp{0%,70%{opacity:0}76%,94%{opacity:1}100%{opacity:0}}
+.movil-raiz .say{opacity:0;animation:m-say 9s ease infinite}
+@keyframes m-say{0%,2%{opacity:0}6%,30%{opacity:1}34%,100%{opacity:0}}
+.movil-raiz .nums .num{opacity:.25}
+.movil-raiz .nums.go .num{animation:m-nowT .9s cubic-bezier(.2,.8,.2,1) both}
+.movil-raiz .ba{touch-action:pan-y}
+.movil-raiz .ba input[type=range]{position:absolute;left:0;right:0;top:50%;width:100%;height:72px;margin:-36px 0 0;opacity:0;cursor:ew-resize;z-index:6;touch-action:pan-x}
+.movil-raiz .ba:focus-within .knob{box-shadow:0 0 0 4px var(--bg),0 0 0 6px var(--accent)}
+@media (prefers-reduced-motion: reduce){.movil-raiz *{animation:none !important;transition:none !important}
+.movil-raiz .pc .now,.movil-raiz .nums .num{opacity:1;transform:none}
+.movil-raiz .pc .was{background-size:100% 2px}
+.movil-raiz .notesv,.movil-raiz .stamp{opacity:0}
+.movil-raiz .say.s1{opacity:1}
+.movil-raiz .rail{transform:translateX(50%)}}
