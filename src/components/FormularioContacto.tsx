@@ -132,6 +132,7 @@ export function FormularioContacto({ empresa, movil = false }: { empresa: boolea
       <button type="submit" class="f-enviar" disabled={enviando}>
         {enviando ? 'Enviando…' : empresa ? 'Proponer una conversación →' : 'Enfocar mi idea →'}
       </button>
+      <p class="f-nota">Uso tus datos solo para responderte y no los cedo a nadie.</p>
       {faltan && <p id="f-error" role="alert" class="f-error">Falta tu nombre o un email válido para poder responderte.</p>}
       {estado === 'error' && (
         <p role="alert" class="f-error">

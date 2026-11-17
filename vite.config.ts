@@ -10,6 +10,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         portada: fileURLToPath(new URL('./index.html', import.meta.url)),
+        error: fileURLToPath(new URL('./404.html', import.meta.url)),
         casoAgentes: fileURLToPath(new URL('./casos/red-de-agentes/index.html', import.meta.url)),
         demoAgentes: fileURLToPath(new URL('./casos/red-de-agentes/demo/index.html', import.meta.url)),
         casoStudy: fileURLToPath(new URL('./casos/app-de-estudio/index.html', import.meta.url)),
