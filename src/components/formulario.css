@@ -1,0 +1,47 @@
+.form { display: flex; flex-direction: column; gap: 18px; }
+.f-fila { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 14px; }
+.f-label { display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; }
+.field {
+  width: 100%; box-sizing: border-box; border-radius: 14px; border: 1px solid var(--line); background: var(--inner);
+  color: var(--fg); font: inherit; font-weight: 400; font-size: 17px; padding: 14px 16px; outline: none; transition: border-color .3s;
+}
+.field:focus { border-color: var(--accent); }
+.field:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+textarea.field { resize: vertical; }
+.f-chips { margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.f-chips legend { padding: 0; margin-bottom: 10px; font-size: 14px; font-weight: 600; }
+.f-chips-in { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: transparent;
+  color: var(--fg); font: inherit; font-size: 15px; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.f-enviar {
+  align-self: flex-start; min-height: 56px; padding: 0 30px; border-radius: 999px; border: 0;
+  background: var(--accent); color: var(--on-accent); font: inherit; font-weight: 600; cursor: pointer;
+}
+.f-enviar:disabled { cursor: progress; opacity: .7; }
+.f-error { margin: 0; font-size: 14px; font-weight: 600; color: var(--accent-text); }
+.f-error a { color: inherit; }
+.f-nota { margin: 0; font-size: 13px; color: var(--muted); }
+.f-nota a { color: var(--fg); }
+.trampa { display: none; }
+
+.enviado {
+  padding: 40px; border-radius: 28px; background: var(--card1); border: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.enviado p { margin: 0; }
+.enviado-t { font-weight: 800; font-size: 36px; letter-spacing: -0.03em; }
+.enviado-s { color: var(--muted); }
+
+/* Móvil */
+.form-m { gap: 14px; }
+.form-m .f-label { gap: 6px; }
+.form-m .field { padding: 13px 14px; font-size: 16px; }
+.form-m .f-chips { display: block; }
+.form-m .f-chips legend { margin-bottom: 8px; }
+.form-m .chip { padding: 0 14px; font-size: 14px; }
+.form-m .f-enviar { align-self: stretch; padding: 0; }
+.enviado-m { display: block; padding: 28px 20px; border-radius: 22px; }
+.enviado-m .enviado-t { margin: 0 0 8px; font-size: 28px; }

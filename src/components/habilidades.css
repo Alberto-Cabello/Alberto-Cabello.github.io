@@ -1,0 +1,39 @@
+.sk {
+  display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; padding: clamp(22px, 3vw, 36px);
+  border-radius: 24px; background: var(--bg); border: 1px solid var(--line);
+}
+.sk-izq { flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.sk-cab { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.sk-cont { font-family: var(--font-mono); font-size: 12px; color: var(--accent-text); }
+.sk-pausa {
+  min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent;
+  color: var(--fg); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.sk-pila { display: grid; min-height: 150px; align-items: center; }
+.skf {
+  grid-area: 1 / 1; display: flex; flex-direction: column; gap: 10px; pointer-events: none;
+  opacity: 0; filter: blur(10px); transform: translateY(10px);
+  transition: opacity .6s ease, filter .6s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.skf.on { opacity: 1; filter: none; transform: none; }
+.skf strong { font-weight: 800; font-size: clamp(32px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.045em; }
+.skf span { max-width: 520px; color: var(--muted); font-size: 17px; line-height: 1.4; }
+.sk-grupo { flex: 1 1 440px; min-width: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.skb {
+  min-height: 44px; padding: 0 14px; border: 0; background: transparent; color: var(--accent-text);
+  font-weight: 500; cursor: pointer; transition: filter .5s ease, opacity .5s ease, color .3s;
+}
+.skb.off { color: var(--muted); }
+.skb.off::before, .skb.off::after { border-color: transparent; transition: border-color .3s; }
+
+/* Móvil */
+.sk-m { display: flex; flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 12px; padding: 18px 16px; border-radius: 20px; background: transparent; }
+.sk-m .sk-cab { gap: 8px; }
+.sk-m .sk-cont { font-size: 11px; }
+.sk-m .sk-pausa { padding: 0 12px; }
+.sk-m .sk-pila { min-height: 132px; align-items: start; }
+.sk-m .skf { gap: 8px; }
+.sk-m .skf strong { font-size: 30px; letter-spacing: -0.04em; }
+.sk-m .skf span { font-size: 15px; }
+.sk-m .sk-grupo { gap: 6px; }
+.sk-m .skb { padding: 0 11px; font-size: 10.5px; font-weight: 400; }

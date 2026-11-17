@@ -1,0 +1,15 @@
+.velo { position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; pointer-events: none; background: var(--veil); }
+.velo-linea { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--accent); box-shadow: 0 0 24px 2px var(--accent); }
+.velo-tag { position: absolute; left: var(--gutter); top: 12px; white-space: nowrap; }
+
+.lente { position: fixed; z-index: 60; pointer-events: none; }
+.lente .lc { position: absolute; width: 30px; height: 30px; border: 0 solid var(--accent); }
+.lente .tl { left: 0; top: 0; border-left-width: 3px; border-top-width: 3px; }
+.lente .tr { right: 0; top: 0; border-right-width: 3px; border-top-width: 3px; }
+.lente .bl { left: 0; bottom: 0; border-left-width: 3px; border-bottom-width: 3px; }
+.lente .br { right: 0; bottom: 0; border-right-width: 3px; border-bottom-width: 3px; }
+.lente-cruz {
+  position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; margin: -9px 0 0 -9px;
+  border-radius: 99px; border: 2px solid var(--accent); transition: opacity .3s;
+}
+.lente-tag { position: absolute; left: 0; top: -36px; white-space: nowrap; }
