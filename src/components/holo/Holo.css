@@ -1,0 +1,4 @@
+/* Generado desde el tablero Holo: tokens del modo y CSS del tablero, acotados a .holo. */
+:root:not([data-theme="light"]) .holo { --accent: #FF5B2E; --hi: #FFD9CC; --dim: #7A6A64; --warn: #FFC24B; --glow: rgba(255,91,46,0.55); --cone: rgba(255,91,46,0.14); --ring: rgba(255,122,85,0.5); --scan: rgba(255,255,255,0.045); --bar: rgba(255,91,46,0.12); --fg: #F2F0EB; --solo: #0B0B0C; }
+:root[data-theme="light"] .holo { --accent: #B8350F; --hi: #7A2208; --dim: #B7AFA6; --warn: #8A5600; --glow: rgba(184,53,15,0.28); --cone: rgba(184,53,15,0.09); --ring: rgba(184,53,15,0.42); --scan: rgba(0,0,0,0.035); --bar: rgba(184,53,15,0.08); --fg: #111111; --solo: #F3F1EC; }
+

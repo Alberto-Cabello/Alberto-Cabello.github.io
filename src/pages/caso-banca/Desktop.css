@@ -1,0 +1,76 @@
+/* Generado desde el tablero CasoBanca: tokens del modo y CSS del tablero, acotados a .v-esc. */
+:root:not([data-theme="light"]) .v-esc { --bg: #0B0B0C; --fg: #F2F0EB; --muted: #A09D96; --line: #29292B; --panel: #141415; --inner: #202022; --grid: rgba(255,255,255,0.05); --accent: #FF5B2E; --accent-text: #FF7A55; --accent-soft: rgba(255,91,46,0.14); --on-accent: #0B0B0C; --warn: #FFC24B; --paper: #EDEAE3; --paper-fg: #1A1A1A; --paper-line: #CFCAC0; --paper-muted: #5E5A52; --bubble: #26262A; --sweep: rgba(255,91,46,0.30); --accent-on-fg: #B8350F; }
+:root[data-theme="light"] .v-esc { --bg: #F3F1EC; --fg: #111111; --muted: #55524C; --line: #DAD6CC; --panel: #FFFFFF; --inner: #ECE9E2; --grid: rgba(0,0,0,0.06); --accent: #B8350F; --accent-text: #B8350F; --accent-soft: rgba(184,53,15,0.10); --on-accent: #FFFFFF; --warn: #8A5600; --paper: #FFFFFF; --paper-fg: #1A1A1A; --paper-line: #DCD8CF; --paper-muted: #5E5A52; --bubble: #FFFFFF; --sweep: rgba(184,53,15,0.22); --accent-on-fg: #FF7A55; }
+.v-esc .ln{display:block;overflow:hidden;padding-bottom:0.08em}
+.v-esc .w{display:inline-block;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{transform:translateY(110%)}to{transform:none}}
+.v-esc .fade{animation:fade 1s ease .8s both}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.v-esc .rv{animation:reveal linear both;animation-timeline:view();animation-range:entry 5% cover 30%}
+@keyframes reveal{from{opacity:0;transform:translateY(56px)}to{opacity:1;transform:none}}
+.v-esc .rvl{display:block;overflow:hidden}
+.v-esc .rvl > span{display:block;animation:rise linear both;animation-timeline:view();animation-range:entry 10% cover 30%}
+.v-esc .tag{position:relative;display:inline-flex;align-items:center;gap:8px;padding:7px 13px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;color:var(--fg)}
+.v-esc .tag::before,.v-esc .tag::after{content:"";position:absolute;width:9px;height:9px;border:0 solid var(--accent)}
+.v-esc .tag::before{left:0;top:0;border-left-width:2px;border-top-width:2px}
+.v-esc .tag::after{right:0;bottom:0;border-right-width:2px;border-bottom-width:2px}
+.v-esc .tag.mut{color:var(--muted)}
+.v-esc .tag.mut::before,.v-esc .tag.mut::after{border-color:var(--muted)}
+.v-esc .tag.solid{background:var(--bg)}
+.v-esc .cta{position:relative;overflow:hidden}
+.v-esc .cta::after{content:"";position:absolute;inset:0;background:var(--fg);transform:translateY(101%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.v-esc .cta:hover::after{transform:none}
+.v-esc .cta > span{position:relative;z-index:1;transition:color .45s}
+.v-esc .cta:hover > span{color:var(--bg)}
+.v-esc .pulse{animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--accent)}100%{box-shadow:0 0 0 14px transparent}}
+.v-esc .lift{transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s}
+.v-esc .lift:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px var(--accent);border-color:var(--accent)}
+.v-esc .desk .it{position:absolute;filter:blur(4px);opacity:.75;transition:filter .45s ease,opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.v-esc .desk .it:hover{filter:none;opacity:1;transform:scale(1.06) !important;z-index:5}
+.v-esc .desk .front{filter:blur(1.2px);opacity:.95}
+.v-esc .drift{animation:drift 5s ease-in-out infinite}
+@keyframes drift{0%,100%{translate:0 0}50%{translate:3px -5px}}
+.v-esc .caret{display:inline-block;width:2px;height:1em;margin-left:1px;background:var(--accent);vertical-align:-0.15em;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.v-esc .pc .was{background-image:linear-gradient(var(--muted),var(--muted));background-repeat:no-repeat;background-position:0 55%;background-size:0% 2px}
+.v-esc .pc.go .was{animation:strikeT .8s cubic-bezier(.7,0,.2,1) .2s both}
+@keyframes strikeT{to{background-size:100% 2px;opacity:.6}}
+.v-esc .pc .arw{transform:scaleX(0);transform-origin:left}
+.v-esc .pc.go .arw{animation:arw .5s cubic-bezier(.7,0,.2,1) .9s both}
+@keyframes arw{to{transform:scaleX(1)}}
+.v-esc .pc .now{opacity:0;filter:blur(10px);transform:translateY(8px)}
+.v-esc .pc.go .now{animation:nowT .8s cubic-bezier(.2,.8,.2,1) 1.1s both}
+.v-esc .pc .det{opacity:0}
+.v-esc .pc.go .det{animation:nowT .8s ease 1.6s both}
+@keyframes nowT{to{opacity:1;filter:none;transform:none}}
+.v-esc .stepb{transition:opacity .6s ease,filter .6s ease}
+.v-esc .bigf{opacity:.25;transform:translateY(20px)}
+.v-esc .bigf.go{animation:bigf 1.6s cubic-bezier(.2,.8,.2,1) .4s both}
+@keyframes bigf{to{opacity:1;transform:none}}
+.v-esc .sweepr{animation:spin 4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.v-esc .ping{animation:ping 4s linear infinite}
+@keyframes ping{0%{transform:scale(.6);opacity:.9}22%{transform:scale(2.6);opacity:0}100%{transform:scale(2.6);opacity:0}}
+.v-esc .blip{transition:transform .25s ease}
+.v-esc .blip:hover{transform:scale(1.15)}
+.v-esc .seg{transition:background .3s,color .3s}
+.v-esc .bar{transition:width .7s cubic-bezier(.7,0,.2,1)}
+.v-esc .ln2{animation:nowT .45s cubic-bezier(.2,.8,.2,1) both;opacity:0;filter:blur(6px);transform:translateY(6px)}
+.v-esc .tile{transition:background .2s}
+.v-esc .tl .tli{opacity:.25;filter:blur(6px);transform:translateY(10px)}
+.v-esc .tl.go .tli{animation:nowT .9s cubic-bezier(.2,.8,.2,1) both}
+.v-esc .tl .tlbar{transform:scaleX(0);transform-origin:left}
+.v-esc .tl.go .tlbar{animation:arw 4.4s cubic-bezier(.4,0,.2,1) both}
+.v-esc .nums .num{opacity:.2;filter:blur(10px)}
+.v-esc .nums.go .num{animation:nowT 1s cubic-bezier(.2,.8,.2,1) both}
+.v-esc .ico{transition:background .35s,border-color .35s,transform .35s}
+.v-esc .rng{width:100%;height:44px;margin:0;cursor:ew-resize}
+@media (max-width: 760px){.v-esc .stickyh{position:relative !important;top:0 !important}
+.v-esc .stepb{min-height:auto !important;padding:28px 0}
+.v-esc .honly{display:none !important}}
+@media (prefers-reduced-motion: reduce){.v-esc *{animation:none !important;transition:none !important}
+.v-esc .pc .now,.v-esc .pc .det,.v-esc .nums .num,.v-esc .tl .tli,.v-esc .ln2{opacity:1;filter:none;transform:none}
+.v-esc .pc .was{background-size:100% 2px}
+.v-esc .pc .arw,.v-esc .tl .tlbar{transform:none}
+.v-esc .bigf{opacity:1;filter:none;letter-spacing:-0.045em}}

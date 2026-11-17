@@ -14,6 +14,8 @@ export default defineConfig({
         demoAgentes: fileURLToPath(new URL('./casos/red-de-agentes/demo/index.html', import.meta.url)),
         casoStudy: fileURLToPath(new URL('./casos/app-de-estudio/index.html', import.meta.url)),
         demoStudy: fileURLToPath(new URL('./casos/app-de-estudio/demo/index.html', import.meta.url)),
+        casoBanca: fileURLToPath(new URL('./casos/automatizacion-y-asistente-ia/index.html', import.meta.url)),
+        demoBanca: fileURLToPath(new URL('./casos/automatizacion-y-asistente-ia/demo/index.html', import.meta.url)),
       },
     },
   },

@@ -1,0 +1,45 @@
+/* Generado desde el tablero CasoBancaMovil: tokens del modo y CSS del tablero, acotados a .movil-raiz. */
+:root:not([data-theme="light"]) .movil-raiz { --bg: #0B0B0C; --fg: #F2F0EB; --muted: #A09D96; --line: #29292B; --panel: #141415; --inner: #202022; --accent: #FF5B2E; --accent-text: #FF7A55; --accent-soft: rgba(255,91,46,0.14); --on-accent: #0B0B0C; --paper: #EDEAE3; --paper-fg: #1A1A1A; --paper-line: #CFCAC0; --paper-muted: #5E5A52; --bubble: #26262A; --sweep: rgba(255,91,46,0.30); --accent-on-fg: #B8350F; }
+:root[data-theme="light"] .movil-raiz { --bg: #F3F1EC; --fg: #111111; --muted: #55524C; --line: #DAD6CC; --panel: #FFFFFF; --inner: #ECE9E2; --accent: #B8350F; --accent-text: #B8350F; --accent-soft: rgba(184,53,15,0.10); --on-accent: #FFFFFF; --paper: #FFFFFF; --paper-fg: #1A1A1A; --paper-line: #DCD8CF; --paper-muted: #5E5A52; --bubble: #FFFFFF; --sweep: rgba(184,53,15,0.22); --accent-on-fg: #FF7A55; }
+.movil-raiz .ln{display:block;overflow:hidden;padding-bottom:0.08em}
+.movil-raiz .w{display:inline-block;animation:m-rise 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes m-rise{from{transform:translateY(110%)}to{transform:none}}
+.movil-raiz .fade{animation:m-fade 1s ease .7s both}
+@keyframes m-fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.movil-raiz .rv{animation:m-reveal linear both;animation-timeline:view();animation-range:entry 5% cover 25%}
+@keyframes m-reveal{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+.movil-raiz .tag{position:relative;display:inline-flex;align-items:center;gap:7px;padding:6px 11px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;color:var(--fg)}
+.movil-raiz .tag::before,.movil-raiz .tag::after{content:"";position:absolute;width:8px;height:8px;border:0 solid var(--accent)}
+.movil-raiz .tag::before{left:0;top:0;border-left-width:2px;border-top-width:2px}
+.movil-raiz .tag::after{right:0;bottom:0;border-right-width:2px;border-bottom-width:2px}
+.movil-raiz .tag.mut{color:var(--muted)}
+.movil-raiz .tag.mut::before,.movil-raiz .tag.mut::after{border-color:var(--muted)}
+.movil-raiz .tag.solid{background:var(--bg)}
+.movil-raiz .hsc{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.movil-raiz .hsc::-webkit-scrollbar{display:none}
+.movil-raiz .hsc > *{flex:0 0 auto;scroll-snap-align:start}
+.movil-raiz .pulse{animation:m-pulse 1.8s ease-out infinite}
+@keyframes m-pulse{0%{box-shadow:0 0 0 0 var(--accent)}100%{box-shadow:0 0 0 12px transparent}}
+.movil-raiz .caret{display:inline-block;width:2px;height:1em;margin-left:1px;background:var(--accent);vertical-align:-0.15em;animation:m-blink 1s steps(2) infinite}
+@keyframes m-blink{50%{opacity:0}}
+.movil-raiz .bub{transition:opacity .5s ease}
+.movil-raiz .pc .was{background-image:linear-gradient(var(--muted),var(--muted));background-repeat:no-repeat;background-position:0 55%;background-size:0% 2px}
+.movil-raiz .pc.goA .was{animation:m-strikeT .8s cubic-bezier(.7,0,.2,1) .2s both}
+.movil-raiz .pc.goB .was{animation:m-strikeT2 .8s cubic-bezier(.7,0,.2,1) .2s both}
+@keyframes m-strikeT{to{background-size:100% 2px;opacity:.6}}
+@keyframes m-strikeT2{to{background-size:100% 2px;opacity:.6}}
+.movil-raiz .pc .now{opacity:0;transform:translateY(8px)}
+.movil-raiz .pc.goA .now{animation:m-nowT .7s cubic-bezier(.2,.8,.2,1) .8s both}
+.movil-raiz .pc.goB .now{animation:m-nowT2 .7s cubic-bezier(.2,.8,.2,1) .8s both}
+@keyframes m-nowT{to{opacity:1;transform:none}}
+@keyframes m-nowT2{to{opacity:1;transform:none}}
+.movil-raiz .sweepr{animation:m-spin 4s linear infinite}
+@keyframes m-spin{to{transform:rotate(360deg)}}
+.movil-raiz .bar{transition:width .6s cubic-bezier(.7,0,.2,1)}
+.movil-raiz .ln2{animation:m-nowT .4s cubic-bezier(.2,.8,.2,1) both;opacity:0;transform:translateY(6px)}
+.movil-raiz .nums .num{opacity:.25}
+.movil-raiz .nums.go .num{animation:m-nowT .9s cubic-bezier(.2,.8,.2,1) both}
+.movil-raiz .rng{width:100%;height:44px;margin:0;cursor:ew-resize}
+@media (prefers-reduced-motion: reduce){.movil-raiz *{animation:none !important;transition:none !important}
+.movil-raiz .pc .now,.movil-raiz .nums .num,.movil-raiz .ln2{opacity:1;transform:none}
+.movil-raiz .pc .was{background-size:100% 2px}}
