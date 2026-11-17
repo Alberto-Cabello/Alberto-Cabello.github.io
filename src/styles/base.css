@@ -1,0 +1,40 @@
+html { background: var(--bg); overflow-x: clip; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+button { font: inherit; }
+
+/* Foco visible: contorno del acento de 2 px con separación. */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Etiqueta con esquinas de visor (nunca píldora). Cada página ajusta tamaño y padding. */
+.tag {
+  position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px;
+  font-family: var(--font-mono); font-size: 12px; line-height: 1.2;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--fg);
+}
+.tag::before, .tag::after { content: ""; position: absolute; width: 9px; height: 9px; border: 0 solid var(--accent); }
+.tag::before { left: 0; top: 0; border-left-width: 2px; border-top-width: 2px; }
+.tag::after { right: 0; bottom: 0; border-right-width: 2px; border-bottom-width: 2px; }
+.tag.solid { background: var(--bg); }
+
+.paused, .paused * { animation-play-state: paused !important; }
+
+/* Raíz de la versión móvil: todo el ancho hasta 560 px, centrada. */
+.movil-raiz { width: 100%; max-width: 560px; margin: 0 auto; font-size: 16px; overflow-x: clip; position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

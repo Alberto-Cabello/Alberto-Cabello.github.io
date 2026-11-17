@@ -1,0 +1,54 @@
+/* Tokens comunes. Los de una sola página se declaran en esa página. */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0B0B0C;
+  --fg: #F2F0EB;
+  --muted: #A09D96;
+  --line: #29292B;
+  --panel: #141415;
+  --inner: #202022;
+  --accent: #FF5B2E;
+  --accent-text: #FF7A55;
+  --accent-soft: rgba(255, 91, 46, 0.12);
+  --on-accent: #0B0B0C;
+  --accent-on-fg: #B8350F;
+  --warn: #FFC24B;
+  --good: #5FCB8E;
+  --danger: #FF6B6B;
+  --head-bg: #0B0B0C;
+  --area-1: #FF7A45;
+  --area-2: #4DA3FF;
+  --area-3: #3DDC97;
+  --area-4: #C08CFF;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #F3F1EC;
+  --fg: #111111;
+  --muted: #55524C;
+  --line: #DAD6CC;
+  --panel: #FFFFFF;
+  --inner: #ECE9E2;
+  --accent: #B8350F;
+  --accent-text: #B8350F;
+  --accent-soft: rgba(184, 53, 15, 0.09);
+  --on-accent: #FFFFFF;
+  --accent-on-fg: #FF7A55;
+  --warn: #8A5600;
+  --good: #1F7A4D;
+  --danger: #B3261E;
+  --head-bg: #F3F1EC;
+  --area-1: #B8350F;
+  --area-2: #1F5FBF;
+  --area-3: #1A7F52;
+  --area-4: #7A4CC2;
+}
+
+:root {
+  --font-sans: Inter, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --max: 1320px;
+  --gutter: clamp(20px, 4vw, 48px);
+}

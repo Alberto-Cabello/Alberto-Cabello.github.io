@@ -1,0 +1,6 @@
+#!/bin/sh
+# Revisa términos prohibidos en todo lo que se va a versionar.
+node scripts/check-terms.mjs || {
+  echo "Commit cancelado: quita los términos prohibidos de los archivos indicados."
+  exit 1
+}

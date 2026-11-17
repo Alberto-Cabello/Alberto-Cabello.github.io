@@ -1,0 +1,10 @@
+# Material de referencia privado (brief, tableros, lista de términos)
+_referencia/
+
+# Dependencias y builds
+node_modules/
+dist/
+
+# Sistema
+.DS_Store
+Thumbs.db

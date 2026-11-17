@@ -1,0 +1,16 @@
+import { defineConfig } from 'vite';
+import preact from '@preact/preset-vite';
+import { fileURLToPath } from 'node:url';
+
+// Multipágina: cada página es una entrada con su propio index.html.
+export default defineConfig({
+  base: '/',
+  plugins: [preact()],
+  build: {
+    rollupOptions: {
+      input: {
+        portada: fileURLToPath(new URL('./index.html', import.meta.url)),
+      },
+    },
+  },
+});

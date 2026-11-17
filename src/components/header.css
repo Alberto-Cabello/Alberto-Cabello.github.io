@@ -1,0 +1,81 @@
+.acento { color: var(--accent); }
+.acento-t { color: var(--accent-text); }
+
+.boton-modo {
+  display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 44px;
+  border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--fg); cursor: pointer; padding: 0;
+}
+
+.logo { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
+
+/* Portada · escritorio */
+.hdr { position: sticky; top: 0; z-index: 50; background: var(--head-bg); border-bottom: 1px solid var(--line); }
+.hdr-in {
+  max-width: var(--max); margin: 0 auto; padding: 16px var(--gutter); box-sizing: border-box;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+}
+.hdr-izq { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.hdr-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 15px; }
+.navx { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; text-decoration: none; }
+.hdr-cta {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px;
+  background: var(--accent); color: var(--on-accent); text-decoration: none; font-weight: 600;
+}
+
+.pill {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 5px 0 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent; color: var(--fg); font: inherit; font-size: 13px; cursor: pointer;
+  transition: border-color .3s;
+}
+.pill:hover, .pill:focus-visible { border-color: var(--accent); }
+.pill strong { font-weight: 700; }
+.pill .pk { font-family: var(--font-mono); color: var(--muted); }
+.pill .act {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 12px; border-radius: 999px;
+  background: var(--fg); color: var(--bg); font-weight: 600; transition: background .3s, color .3s;
+}
+.pill:hover .act { background: var(--accent); color: var(--on-accent); }
+.pdot { width: 8px; height: 8px; border-radius: 99px; background: var(--accent); animation: waitp 1.6s ease-in-out infinite; }
+@keyframes waitp { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+@media (max-width: 760px) { .navx { display: none !important; } }
+@media (max-width: 560px) { .pill .pk { display: none; } }
+
+/* Portada · móvil */
+.hdr-in-m { padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.logo-m { font-size: 17px; }
+.hdr-der-m { display: flex; align-items: center; gap: 6px; }
+.pill-m {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent; color: var(--fg); font: inherit; font-size: 13px; cursor: pointer;
+}
+.pill-m strong { font-weight: 700; }
+.sheet {
+  display: flex; flex-direction: column; padding: 4px 16px 16px; border-top: 1px solid var(--line);
+  animation: sheet .35s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes sheet { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+.sheet a {
+  display: flex; align-items: center; justify-content: space-between; min-height: 52px; border-bottom: 1px solid var(--line);
+  text-decoration: none; font-weight: 700; font-size: 20px;
+}
+.sheet button {
+  display: flex; align-items: center; justify-content: space-between; min-height: 52px; border: 0; background: transparent;
+  color: var(--fg); font: inherit; font-weight: 600; font-size: 16px; cursor: pointer; padding: 0;
+}
+
+/* Casos · escritorio */
+.hdr-caso {
+  max-width: var(--max); margin: 0 auto; padding: 22px var(--gutter); box-sizing: border-box;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+}
+.volver { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-decoration: none; }
+
+/* Casos y demos · móvil */
+.hdr-caso-m {
+  position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line);
+  padding: 6px 12px 6px 6px; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+}
+.hdr-caso-m .volver { padding: 0 10px; }
+.logo-cm { font-size: 16px; }
+.titulo-m { font-weight: 800; font-size: 15px; letter-spacing: -0.02em; }
