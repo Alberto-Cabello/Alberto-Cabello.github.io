@@ -4,7 +4,7 @@ const paginas = ['', 'casos/red-de-agentes/', 'casos/app-de-estudio/', 'casos/au
 const b = await chromium.launch();
 const tot = {};
 for (const [w, h, m, n] of [[1440, 900, false, 'esc'], [390, 844, true, 'mov']]) for (const tema of ['dark', 'light']) for (const reduce of [false, true]) {
-  const ctx = await b.newContext({ viewport: { width: w, height: h }, isMobile: m, hasTouch: m, reducedMotion: reduce ? 'reduce' : 'no-preference' });
+  const ctx = await b.newContext({ bypassCSP: true, viewport: { width: w, height: h }, isMobile: m, hasTouch: m, reducedMotion: reduce ? 'reduce' : 'no-preference' });
   await ctx.addInitScript((t) => { try { localStorage.setItem('tema', t); } catch (e) {} }, tema);
   for (const ruta of paginas) {
     const p = await ctx.newPage();
