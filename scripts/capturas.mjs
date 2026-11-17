@@ -1,11 +1,12 @@
 // Capturas de revisión: 1440×900 y 390×844, en oscuro y en claro.
-// Uso: node scripts/capturas.mjs [url-base] [carpeta]   (por defecto, la web publicada y capturas/)
+// Uso: node scripts/capturas.mjs [url-base] [carpeta] [nombre=ruta,...]   (por defecto, la web publicada, capturas/ y la portada)
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
 
 const BASE = process.argv[2] || 'https://alberto-cabello.github.io/';
 const OUT = process.argv[3] || 'capturas';
-const PAGINAS = [{ nombre: 'portada', ruta: '' }];
+// Páginas: argumento 3 como «nombre=ruta,nombre=ruta» (por defecto, la portada).
+const PAGINAS = (process.argv[4] || 'portada=').split(',').map((x) => { const [nombre, ruta = ''] = x.split('='); return { nombre, ruta }; });
 const VISTAS = [
   { nombre: 'escritorio', width: 1440, height: 900, isMobile: false },
   { nombre: 'movil', width: 390, height: 844, isMobile: true },

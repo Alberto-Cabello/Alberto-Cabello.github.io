@@ -1,0 +1,79 @@
+.dia { position: relative; height: clamp(500px, 44vw, 580px); border-radius: 28px; overflow: hidden; border: 1px solid var(--line); }
+.dia-est { position: absolute; border-radius: 50%; background: #FFFFFF; }
+.dia-sol {
+  position: absolute; width: 220px; height: 220px; margin: -110px 0 0 -110px; border-radius: 50%;
+  background: radial-gradient(circle, #FFE2B8 0, #FFB27A 15%, rgba(255,140,80,.35) 17%, rgba(255,140,80,0) 60%);
+}
+.dia-luna {
+  position: absolute; left: 70%; top: 20%; width: 110px; height: 110px; margin: -55px 0 0 -55px; border-radius: 50%;
+  background: radial-gradient(circle, #F4EFE6 0, #F4EFE6 17%, rgba(244,239,230,.2) 19%, rgba(244,239,230,0) 55%);
+}
+.dia-ciudad { position: absolute; left: 0; right: 0; bottom: 0; height: 22%; display: flex; align-items: flex-end; gap: 6px; padding: 0 3%; }
+.dia-ciudad > span { position: relative; background: #050507; border-radius: 3px 3px 0 0; }
+.dia-ventana { position: absolute; left: 30%; top: 22%; width: 40%; height: 18%; border-radius: 2px; }
+.dia-izq { position: absolute; left: 3.5%; top: 6%; width: min(400px, 40%); display: flex; flex-direction: column; gap: 14px; color: #F4EFE6; }
+.dia-reloj { font-family: var(--font-mono); font-weight: 500; font-size: clamp(60px, 6.4vw, 100px); line-height: .9; letter-spacing: -0.04em; }
+.dia-yo { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; border-radius: 16px; background: rgba(11,11,12,.62); border: 1px solid rgba(244,239,230,.14); }
+.dia-yo-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; opacity: .7; }
+.dia-yo strong { font-size: 20px; line-height: 1.2; letter-spacing: -0.01em; }
+.dia-yo-s { font-size: 13px; opacity: .75; }
+.dia-cont { display: flex; gap: 18px; font-size: 13px; }
+.dia-cont strong { font-size: 22px; }
+.dia-feed { position: absolute; right: 3%; top: 6%; width: min(410px, 44%); display: flex; flex-direction: column; gap: 8px; }
+.dia-feed-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; color: rgba(244,239,230,.8); }
+.dia-ev { display: flex; gap: 10px; align-items: baseline; padding: 9px 12px; border-radius: 14px; border: 1px solid; color: #F4EFE6; }
+.dia-ev-h { flex: 0 0 auto; font-family: var(--font-mono); font-size: 12px; opacity: .75; }
+.dia-ev-t { display: flex; flex-direction: column; min-width: 0; }
+.dia-ev-t strong { font-size: 13px; }
+.dia-ev-t > span { font-size: 14px; line-height: 1.3; }
+.evt { animation: pop .5s cubic-bezier(.2,.8,.2,1) both; }
+.dia-rep-pos { position: absolute; left: 50%; top: 54%; transform: translate(-50%, -50%); z-index: 4; width: min(470px, 86%); }
+.dia-rep { padding: 18px 20px; border-radius: 20px; background: rgba(11,11,12,.94); border: 2px solid #FF5B2E; color: #F4EFE6; display: flex; flex-direction: column; gap: 10px; }
+.dia-rep-cab { display: flex; justify-content: space-between; gap: 8px; font-family: var(--font-mono); font-size: 12px; }
+.dia-rep-sum { font-size: 18px; line-height: 1.25; }
+.dia-rep-item { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 12px; background: rgba(244,239,230,.08); }
+.dia-rep-item > span { flex: 1; font-size: 14px; line-height: 1.3; }
+.dia-rep-item button { flex: 0 0 auto; min-height: 44px; padding: 0 14px; border-radius: 999px; border: 0; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+
+.tl { position: absolute; left: 4%; right: 4%; bottom: 6%; height: 18px; }
+.tl-base { position: absolute; left: 0; right: 0; top: 8px; height: 2px; background: rgba(244,239,230,.25); }
+.tl-hecho { position: absolute; left: 0; top: 8px; height: 2px; background: #FF5B2E; }
+.tl-tick { position: absolute; border-radius: 99px; border: 2px solid #050507; box-sizing: border-box; }
+.knob { position: absolute; top: -3px; width: 24px; height: 24px; margin-left: -12px; border-radius: 99px; background: #FF5B2E; box-shadow: 0 0 0 5px rgba(255,91,46,.25); }
+.tl-l, .tl-c, .tl-r { position: absolute; top: 24px; font-family: var(--font-mono); font-size: 11px; color: rgba(244,239,230,.7); }
+.tl-l { left: 0; }
+.tl-c { left: 50%; transform: translateX(-50%); }
+.tl-r { right: 0; }
+.tl input[type=range] { position: absolute; inset: -14px 0; width: 100%; height: 44px; margin: 0; opacity: 0; cursor: ew-resize; z-index: 3; }
+.tl:focus-within .knob { box-shadow: 0 0 0 3px #050507, 0 0 0 6px #FFFFFF !important; }
+
+/* Móvil */
+.dia-m { height: 480px; border-radius: 22px; color: #F4EFE6; }
+.dia-sol-m { width: 140px; height: 140px; margin: -70px 0 0 -70px; background: radial-gradient(circle, #FFE2B8 0, #FFB27A 15%, rgba(255,140,80,.32) 17%, rgba(255,140,80,0) 60%); }
+.dia-luna-m { left: 78%; top: 14%; width: 80px; height: 80px; margin: -40px 0 0 -40px; }
+.dia-ciudad-m { height: 15%; gap: 4px; }
+.dia-m-in { position: relative; z-index: 2; height: 100%; box-sizing: border-box; padding: 14px 14px 18px; display: flex; flex-direction: column; gap: 10px; }
+.dia-m-cab { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
+.dia-reloj-m { font-size: 52px; }
+.dia-m-cont { display: flex; flex-direction: column; align-items: flex-end; font-size: 12px; line-height: 1.25; text-align: right; }
+.dia-m-cont strong { font-size: 18px; }
+.dia-yo-m { gap: 3px; padding: 10px 12px; border-radius: 14px; background: rgba(11,11,12,.66); }
+.dia-yo-m .dia-yo-k { font-size: 10.5px; opacity: .75; }
+.dia-yo-m strong { font-size: 17px; }
+.dia-yo-m .dia-yo-s { font-size: 12.5px; opacity: .8; }
+.dia-feed-m { position: static; width: auto; gap: 6px; }
+.dia-feed-m .dia-feed-k { font-size: 10.5px; color: inherit; opacity: .85; }
+.dia-ev-m { gap: 8px; padding: 8px 10px; border-radius: 12px; }
+.dia-ev-m .dia-ev-h { font-size: 11px; opacity: .8; }
+.dia-ev-m .dia-ev-t strong { font-size: 12.5px; }
+.dia-ev-m .dia-ev-t > span { font-size: 13px; }
+.tl-m { position: relative; left: auto; right: auto; bottom: auto; margin-top: auto; height: 34px; }
+.tl-m .tl-base { background: rgba(244,239,230,.3); }
+.tl-m .knob { box-shadow: 0 0 0 4px rgba(255,91,46,.28); }
+.tl-m .tl-l, .tl-m .tl-c, .tl-m .tl-r { top: 22px; font-size: 10.5px; color: rgba(244,239,230,.85); white-space: nowrap; }
+.tl-m input[type=range] { inset: auto; left: 0; right: 0; top: -13px; }
+.dia-rep-m { padding: 14px; border-radius: 18px; background: rgba(11,11,12,.95); gap: 8px; }
+.dia-rep-m .dia-rep-cab { font-size: 11px; }
+.dia-rep-m .dia-rep-sum { font-size: 15px; }
+.dia-rep-m .dia-rep-item { gap: 8px; padding: 6px 8px; }
+.dia-rep-m .dia-rep-item > span { font-size: 13px; }
