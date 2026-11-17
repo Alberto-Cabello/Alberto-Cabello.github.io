@@ -219,7 +219,7 @@ export function Mobile() {
 <span style="display: flex; justify-content: space-between; padding: 6px 7px; border-radius: 8px; background: #F2F2F5; font-size: 10px; font-weight: 700">Lección 4 <span style="color: #1F7A4D">✓</span></span>
 <span style="display: flex; justify-content: space-between; padding: 6px 7px; border-radius: 8px; background: #F2F2F5; font-size: 10px; font-weight: 700">Práctica <span style="color: #1F7A4D">✓</span></span>
 <span style="display: flex; justify-content: space-between; padding: 6px 7px; border-radius: 8px; border: 1.5px solid var(--accent); font-size: 10px; font-weight: 700">Repaso · 4 fichas <span>→</span></span>
-<span style="font-size: 9.5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #55555C; margin-top: 2px">MAPA DEL TEMARIO</span>
+<span style="font-size: 9.5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #55555C; margin-top: 2px" class="txt-css" data-t="MAPA DEL TEMARIO" />
 <span style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px">{(v.mapCells).map((m: any, m_i: number) => (<Fragment key={m_i}><span style={`height: 12px; border-radius: 3px; background: ${m.bg}`}></span></Fragment>))}</span>
 </div>
 </div>

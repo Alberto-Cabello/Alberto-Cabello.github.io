@@ -10,6 +10,8 @@
 }
 .caso [id] { scroll-margin-top: 96px; }
 .movil-raiz.caso [id] { scroll-margin-top: 70px; }
+/* Rótulos de las maquetas decorativas pintados con CSS: se ven igual y no cuentan como texto. */
+.txt-css::after { content: attr(data-t); }
 /* Desplazamiento horizontal con 16 px de margen al encajar (como en el caso 01). */
 .movil-raiz .hsc { scroll-padding-inline: 16px; }
 
@@ -137,7 +139,7 @@
 @keyframes m-stamp{0%,70%{opacity:0}76%,94%{opacity:1}100%{opacity:0}}
 .movil-raiz .say{opacity:0;animation:m-say 9s ease infinite}
 @keyframes m-say{0%,2%{opacity:0}6%,30%{opacity:1}34%,100%{opacity:0}}
-.movil-raiz .nums .num{opacity:.25}
+.movil-raiz .nums .num{opacity:1}
 .movil-raiz .nums.go .num{animation:m-nowT .9s cubic-bezier(.2,.8,.2,1) both}
 .movil-raiz .ba{touch-action:pan-y}
 .movil-raiz .ba input[type=range]{position:absolute;left:0;right:0;top:50%;width:100%;height:72px;margin:-36px 0 0;opacity:0;cursor:ew-resize;z-index:6;touch-action:pan-x}
