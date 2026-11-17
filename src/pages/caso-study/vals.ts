@@ -104,7 +104,7 @@ export function useVals(movil: boolean): any {
     toggle: alternar,
     pdfLines: (movil ? [92, 78, 88, 64, 84, 70] : [92, 78, 88, 64, 84, 70, 90, 56]).map((w) => ({ w })),
     notes: movil
-      ? NOTES_M.map((n, i) => { const on = reduce || i === nf; return { ...n, blur: 0, o: on ? 1 : 0.55, z: on ? 5 : 1 }; })
+      ? NOTES_M.map((n, i) => { const on = reduce || i === nf; return { ...n, blur: 0, o: on ? 1 : 0.8, z: on ? 5 : 1 }; })
       : [
         { text: '¿Algo tipo app? ¿Que se use en el móvil?', x: 31, y: 7, r: 5, w: 230, bg: Y, tr: -4 },
         { text: 'La gente lo abre… y no lo termina', x: 56, y: 12, r: -4, w: 220, bg: P, tr: 3 },

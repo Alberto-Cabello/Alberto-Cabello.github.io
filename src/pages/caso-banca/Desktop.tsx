@@ -8,10 +8,11 @@ import './Desktop.css';
 class Logica extends DCLogic {
 
   componentDidMount() {
+    try { this.reduce = this.reduce || window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
     this.check = () => {
       const h = window.innerHeight;
       const st = this.state || {};
-      if (h > 2000) {
+      if (this.reduce) {
         if (!st.seenAll) { this.setState({ seenAll: true, seenDesk: true, seenBig: true, seenChat: true, seenGen: true, seenTl: true, seenNums: true, cnt: 1, chatK: 20, genP: 1, genDone: true }); }
         return;
       }
@@ -36,14 +37,14 @@ class Logica extends DCLogic {
     window.addEventListener('resize', this.onResize);
     setTimeout(this.check, 300);
     this.check();
-    this.formT = setInterval(() => {
+    this.formT = setInterval(() => { if (document.hidden || this.reduce) { return; }
       const s = this.state || {};
       if (!s.seenDesk || s.seenAll) { return; }
       const el = document.querySelector('[data-seen="Desk"]');
       if (el) { const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > window.innerHeight) { return; } }
       this.setState({ fk: (s.fk || 0) + 1 });
     }, 90);
-    this.chatT = setInterval(() => {
+    this.chatT = setInterval(() => { if (document.hidden || this.reduce) { return; }
       const s = this.state || {};
       if (!s.seenChat || s.seenAll) { return; }
       let red = false; try { red = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
@@ -67,7 +68,7 @@ class Logica extends DCLogic {
     clearInterval(this.cntT);
     let k = 0;
     this.setState({ cnt: 0 });
-    this.cntT = setInterval(() => {
+    this.cntT = setInterval(() => { if (document.hidden || this.reduce) { return; }
       k += 1;
       const v = Math.min(1, k / 34);
       this.setState({ cnt: v });
@@ -79,7 +80,7 @@ class Logica extends DCLogic {
     const t0 = Date.now();
     const dur = 3800;
     this.setState({ genP: 0, genDone: false, genRan: true });
-    this.genT = setInterval(() => {
+    this.genT = setInterval(() => { if (document.hidden || this.reduce) { return; }
       const p = Math.min(1, (Date.now() - t0) / dur);
       const e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
       this.setState({ genP: e, genDone: p >= 1 });
@@ -162,7 +163,7 @@ class Logica extends DCLogic {
     const storyList = SD.map((d, i) => ({
       i, n: String(i + 1).padStart(2, '0'), k: d.k, wasK: d.wasK, was: d.was, now: d.now, det: d.det,
       cls: s.seenAll || i <= story ? 'go' : '',
-      op: s.seenAll || i === story ? 1 : 0.32, blur: s.seenAll || i === story ? 0 : 2.5
+      op: s.seenAll || i === story ? 1 : 0.8, blur: s.seenAll || i === story ? 0 : 1
     }));
     const BL = [
       { name: 'Configurar en masa con IA generativa', short: 'la petición', verdict: 'Descartada tal cual', ok: false, r: 0.82, a: 300, sc: [95, 90, 20, 80], text: 'La necesidad era real; la herramienta, no. Un error inventado en una de cientos de configuraciones no avisa. Pasa al generador.' },
@@ -319,6 +320,7 @@ class Logica extends DCLogic {
 <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg>
 </button>
 </header>
+<main>
 
 <section style="max-width: 1320px; margin: 0 auto; padding: clamp(40px, 8vw, 110px) clamp(20px, 4vw, 48px) clamp(48px, 8vw, 100px)">
 <p class="fade" style="margin: 0 0 24px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: var(--accent-text)">Caso 03 · Automatización y asistentes IA</p>
@@ -539,7 +541,7 @@ class Logica extends DCLogic {
 <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(28, minmax(0, 1fr)); gap: 3px; padding: 14px; border-radius: 16px; background: var(--bg); border: 1px solid var(--line)">
 {(v.tiles).map((x: any, x_i: number) => (<Fragment key={x_i}><span class="tile" style={`aspect-ratio: 1; border-radius: 2px; background: ${x.bg}`}></span></Fragment>))}
 </div>
-<div role="status" style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; flex-direction: column; gap: 4px">
 <strong style="font-size: 17px">{v.genStatus}</strong>
 <span style="font-size: 14px; color: var(--muted)">A mano serían unas 137 horas (supuesto ilustrativo: 20 minutos por ingesta).</span>
 </div>
@@ -664,6 +666,7 @@ class Logica extends DCLogic {
 </div>
 </section>
 
+</main>
 </div>
 
       </>

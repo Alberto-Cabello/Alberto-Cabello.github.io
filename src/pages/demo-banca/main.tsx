@@ -12,4 +12,4 @@ function Pagina() {
 }
 
 render(<Pagina />, document.getElementById('app')!);
-pausarSecciones('.demo > section');
+pausarSecciones('.demo section');

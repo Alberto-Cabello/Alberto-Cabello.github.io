@@ -182,7 +182,7 @@ export default function Dia({ sector, movil = false }: { sector: number; movil?:
             {linea}
           </div>
         </div>
-        {informe && <div aria-live="polite" style="margin-top: 10px">{informe}</div>}
+        {informe && <div style="margin-top: 10px">{informe}</div>}
       </>
     );
   }

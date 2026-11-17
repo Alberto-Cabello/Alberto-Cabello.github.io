@@ -1,3 +1,4 @@
+// Recorre una página haciendo scroll y guarda una captura por pantalla. Uso: node scripts/recorrido.mjs ruta prefijo
 import { chromium } from 'playwright';
 const [ruta, pref] = [process.argv[2], process.argv[3]];
 const b = await chromium.launch();

@@ -4,6 +4,6 @@
   font-size: 14px; color: var(--muted);
 }
 .pie-enl { display: flex; gap: 20px; }
-.pie a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+.pie a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; text-decoration: none; }
 .pie-m { padding: 20px 16px 32px; flex-wrap: nowrap; font-size: 13px; }
 .pie-m .pie-enl { gap: 16px; }

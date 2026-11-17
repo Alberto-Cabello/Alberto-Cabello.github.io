@@ -243,7 +243,7 @@ export default function Constelacion({ sector, onSector, movil = false }: { sect
     </div>
   );
   const panelEl = (
-    <div aria-live={asking ? 'polite' : 'off'} class={movil ? 'cn-panel cn-panel-m' : 'cn-panel'} style={`border: ${panel.border}; background: ${panel.bg}`}>
+    <div aria-live="off" class={movil ? 'cn-panel cn-panel-m' : 'cn-panel'} style={`border: ${panel.border}; background: ${panel.bg}`}>
       <span class="cn-k" style={`color: ${panel.kc}`}><span class={panel.dot ? 'waitp' : ''} style={`width: ${movil ? 9 : 10}px; height: ${movil ? 9 : 10}px; border-radius: 99px; background: ${panel.kc}`} />{panel.k}</span>
       <strong class="cn-t">{panel.title}</strong>
       <span class="cn-s">{panel.sub}</span>

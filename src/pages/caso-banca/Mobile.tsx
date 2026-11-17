@@ -11,13 +11,14 @@ class Logica extends DCLogic {
     try { const el = document.querySelector(sel); if (!el) { return false; } const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < window.innerHeight; } catch (e) { return false; }
   }
   componentDidMount() {
+    try { this.reduce = this.reduce || window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
     let reduce = false;
     try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
     this.reduce = reduce;
     this.check = () => {
       const h = window.innerHeight;
       const st = this.state || {};
-      if (h > 2000) {
+      if (this.reduce) {
         if (!st.seenAll) { this.setState({ seenAll: true, seenDesk: true, seenStory: true, seenChat: true, seenGen: true, seenNums: true, cnt: 1, chatK: 20, genP: 1, genDone: true, genRan: true }); }
         return;
       }
@@ -36,12 +37,12 @@ class Logica extends DCLogic {
     window.addEventListener('resize', this.check);
     setTimeout(this.check, 300);
     this.check();
-    this.formT = setInterval(() => {
+    this.formT = setInterval(() => { if (document.hidden || this.reduce) { return; }
       const s = this.state || {};
       if (!s.seenDesk || s.seenAll || this.reduce || !this.inView('[data-seen="Desk"]')) { return; }
       this.setState({ fk: (s.fk || 0) + 1 });
     }, 120);
-    this.stT = setInterval(() => {
+    this.stT = setInterval(() => { if (document.hidden || this.reduce) { return; }
       const s = this.state || {};
       if (s.stTouched || !s.seenStory || this.reduce || (s.story || 0) >= 3 || !this.inView('[data-seen="Story"]')) { return; }
       this.setState({ story: (s.story || 0) + 1 });
@@ -56,13 +57,13 @@ class Logica extends DCLogic {
     clearInterval(this.cntT);
     let k = 0;
     this.setState({ cnt: 0 });
-    this.cntT = setInterval(() => { k += 1; const v = Math.min(1, k / 30); this.setState({ cnt: v }); if (v >= 1) { clearInterval(this.cntT); } }, 40);
+    this.cntT = setInterval(() => { if (document.hidden || this.reduce) { return; } k += 1; const v = Math.min(1, k / 30); this.setState({ cnt: v }); if (v >= 1) { clearInterval(this.cntT); } }, 40);
   }
   revealChat() {
     clearInterval(this.chatT);
     if (this.reduce) { this.setState({ chatK: 20 }); return; }
     this.setState({ chatK: 0 });
-    this.chatT = setInterval(() => {
+    this.chatT = setInterval(() => { if (document.hidden || this.reduce) { return; }
       const s = this.state || {};
       const L = this.chatData(s.chatB ? 'b' : 'a').lines.length;
       const k = s.chatK || 0;
@@ -75,7 +76,7 @@ class Logica extends DCLogic {
     const t0 = Date.now();
     const dur = 3800;
     this.setState({ genP: 0, genDone: false, genRan: true });
-    this.genT = setInterval(() => {
+    this.genT = setInterval(() => { if (document.hidden || this.reduce) { return; }
       const p = Math.min(1, (Date.now() - t0) / dur);
       const e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
       this.setState({ genP: e, genDone: p >= 1 });
@@ -148,7 +149,7 @@ class Logica extends DCLogic {
       { t: 'Copia la de ayer y cambia el nombre', i: 'J', av: '#CDE7FF', align: 'flex-end' },
       { t: 'Me quedan 300. Hasta el viernes no salgo', i: 'L', av: '#FFC9D6', align: 'flex-start' }
     ];
-    const bubbles = BB.map((b, i) => { const on = s.seenAll || this.reduce || i === bi; return Object.assign({}, b, { blur: 0, o: on ? 1 : 0.5 }); });
+    const bubbles = BB.map((b, i) => { const on = s.seenAll || this.reduce || i === bi; return Object.assign({}, b, { blur: 0, o: on ? 1 : 0.8 }); });
     const SD = [
       { k: 'La petición', wasK: 'lo que pedían', was: 'Un asistente generativo que configure en masa cientos de ingestas.', now: 'Un modelo generativo no garantiza cientos de configuraciones exactas. Para eso hace falta código.', det: 'Decir que no a la idea tal cual fue el primer paso. La intención, ahorrar horas, era buena: había que llevarla a otro sitio.', shape: 'cloud', label: 'petición borrosa' },
       { k: 'Lo que ya había', wasK: 'cómo se usaba', was: 'Un asistente documental con toda la documentación de la herramienta, usado como un buscador.', now: 'Bien preguntado, podía guiar el desarrollo paso a paso.', det: 'No había que comprar nada. Había que aprender a pedirle.', shape: 'sphere', label: 'asistente documental' },
@@ -292,6 +293,7 @@ class Logica extends DCLogic {
 <span style="font-weight: 800; font-size: 16px; letter-spacing: -0.02em">Alberto Cabello<span style="color: var(--accent)">.</span></span>
 <button type="button" onClick={v.toggle} aria-label={v.modeLabel} style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--fg); cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg></button>
 </header>
+<main>
 
 <section style="padding: 36px 16px 32px; display: flex; flex-direction: column; gap: 18px">
 <p class="fade" style="margin: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: var(--accent-text)">Caso 03 · Automatización y asistentes IA</p>
@@ -469,7 +471,7 @@ class Logica extends DCLogic {
 <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); gap: 3px; padding: 10px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line)">
 {(v.tiles).map((x: any, x_i: number) => (<Fragment key={x_i}><span style={`aspect-ratio: 1; border-radius: 2px; background: ${x.bg}`}></span></Fragment>))}
 </div>
-<div role="status" style="display: flex; flex-direction: column; gap: 2px">
+<div style="display: flex; flex-direction: column; gap: 2px">
 <strong style="font-size: 15.5px">{v.genStatus}</strong>
 <span style="font-size: 13px; color: var(--muted)">Cada cuadro, unas 7 ingestas. A mano serían unas 137 horas (supuesto ilustrativo: 20 minutos por ingesta).</span>
 </div>
@@ -477,7 +479,7 @@ class Logica extends DCLogic {
 
 <h3 style="margin: 52px 0 10px; font-weight: 800; font-size: 30px; line-height: 1; letter-spacing: -0.04em">Del prototipo <span style="color: var(--muted)">al día a día.</span></h3>
 <p style="margin: 0 0 16px; color: var(--muted)">Lo que empezó como una prueba acabó convirtiéndose en una formación interna sobre IA y en el asistente que uso cada día. Desliza:</p>
-<ol class="hsc" style="list-style: none; margin: 0 -16px; padding: 0 16px 4px">
+<ol class="hsc" tabIndex={0} aria-label="Del prototipo al día a día" style="list-style: none; margin: 0 -16px; padding: 0 16px 4px">
 {(v.milestones).map((m: any, m_i: number) => (<Fragment key={m_i}>
 <li style="width: 250px; padding: 16px; border-radius: 18px; border: 1px solid var(--line); background: var(--panel); display: flex; flex-direction: column; gap: 8px; box-sizing: border-box">
 <span aria-hidden="true" style="width: 30px; height: 30px; border-radius: 99px; background: var(--accent); color: var(--on-accent); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px">{m.n}</span>
@@ -568,6 +570,7 @@ class Logica extends DCLogic {
 </div>
 </section>
 
+</main>
 </div>
 
       </>

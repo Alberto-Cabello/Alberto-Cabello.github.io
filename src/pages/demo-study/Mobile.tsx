@@ -195,6 +195,7 @@ class Logica extends DCLogic {
 <strong style="font-weight: 800; font-size: 15px; letter-spacing: -0.02em">App de estudio a medida</strong>
 <button type="button" onClick={v.toggle} aria-label={v.modeLabel} style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--fg); cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg></button>
 </header>
+<main>
 
 <section aria-label="Guía de la demo" style="padding: 24px 16px 4px; display: flex; flex-direction: column; gap: 12px">
 <span class="tag" style="align-self: flex-start">Curso ficticio · Ciberseguridad para tu equipo</span>
@@ -235,7 +236,7 @@ class Logica extends DCLogic {
 </div>
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px">
 <span style="font-size: 11.5px; font-weight: 700">¿Cuánto tiempo tienes hoy?</span>
-<span style="display: inline-flex; gap: 4px">{(v.minChips).map((m: any, m_i: number) => (<Fragment key={m_i}><button type="button" class="tap" onClick={m.pick} aria-pressed={m.pressed} style={`min-height: 36px; min-width: 40px; padding: 0 6px; border-radius: 8px; border: 1.5px solid ${m.border}; background: ${m.bg}; color: ${m.fg}; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer`}>{m.l}</button></Fragment>))}</span>
+<span style="display: inline-flex; gap: 4px">{(v.minChips).map((m: any, m_i: number) => (<Fragment key={m_i}><button type="button" class="tap" onClick={m.pick} aria-pressed={m.pressed} style={`min-height: 44px; min-width: 44px; padding: 0 6px; border-radius: 8px; border: 1.5px solid ${m.border}; background: ${m.bg}; color: ${m.fg}; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer`}>{m.l}</button></Fragment>))}</span>
 </div>
 <div style={`padding: 10px; border-radius: 14px; background: ${v.b}; color: #FFFFFF; display: flex; flex-direction: column; gap: 7px`}>
 <span style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px"><span>PLAN DE HOY · {v.mins} MIN</span><span>{v.doneN} de {v.taskN}</span></span>
@@ -378,6 +379,7 @@ class Logica extends DCLogic {
 <a href="/?para=clientes#contacto" style="display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 999px; background: var(--accent); color: var(--on-accent); text-decoration: none; font-weight: 600">Quiero una app así</a>
 <button type="button" onClick={v.reset} style="min-height: 48px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--fg); font: inherit; font-weight: 600; cursor: pointer">Reiniciar la demo</button>
 </section>
+</main>
 </div>
 
       </>

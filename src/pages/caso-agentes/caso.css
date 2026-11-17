@@ -47,7 +47,7 @@ body { font-size: 18px; line-height: 1.55; }
 @keyframes fillb { from { transform: scaleX(0); opacity: .3; } to { transform: scaleX(1); opacity: 1; } }
 @keyframes total { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
 @keyframes sort { from { transform: translate(var(--fx), var(--fy)) rotate(var(--fr)); opacity: .35; } to { transform: none; opacity: 1; } }
-@keyframes focus { from { opacity: .3; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes focus { from { opacity: 1; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
 .spin { animation: spin 2.4s linear infinite; transform-origin: 12px 12px; }
 @keyframes spin { to { transform: rotate(360deg); } }

@@ -16,6 +16,7 @@ export function Desktop() {
 <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg>
 </button>
 </header>
+<main>
 
 <section style="max-width: 1320px; margin: 0 auto; padding: clamp(40px, 8vw, 110px) clamp(20px, 4vw, 48px) clamp(48px, 8vw, 100px)">
 <p class="fade" style="margin: 0 0 24px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: var(--accent-text)">Caso 02 · Apps de formación a medida</p>
@@ -293,7 +294,7 @@ export function Desktop() {
 </div>
 <div style="position: absolute; width: clamp(220px, 19vw, 270px); padding: 16px; border-radius: 18px; background: var(--bg); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; left: 7%; top: 55%; transform: rotate(1.5deg)">
 <span style="display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; line-height: 1.15; letter-spacing: -0.01em"><span style="flex: 0 0 32px; width: 32px; height: 32px; border-radius: 9px; background: var(--accent); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--on-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8z"></path></svg></span>Ve cuánto le falta</span>
-<span style="display: flex; align-items: center; gap: 12px"><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="25" fill="none" stroke="var(--inner)" stroke-width="8"></circle><circle cx="32" cy="32" r="25" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="50" transform="rotate(-90 32 32)"></circle><text x="32" y="37" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="var(--fg)">68%</text></svg><span style="display: flex; flex-direction: column; gap: 6px; flex: 1; font-size: 12px; color: var(--muted)"><span>Objetivo: 75 %</span><span style="display: flex; flex-direction: column; gap: 4px"><span style="height: 6px; border-radius: 4px; background: var(--accent); width: 90%"></span><span style="height: 6px; border-radius: 4px; background: var(--accent); opacity: .6; width: 62%"></span><span style="height: 6px; border-radius: 4px; background: var(--accent); opacity: .3; width: 34%"></span></span><span>Faltan 3 temas por reforzar</span></span></span>
+<span style="display: flex; align-items: center; gap: 12px"><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="25" fill="none" stroke="var(--inner)" stroke-width="8"></circle><circle cx="32" cy="32" r="25" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="50" transform="rotate(-90 32 32)"></circle><text x="32" y="37" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="var(--fg)">68 %</text></svg><span style="display: flex; flex-direction: column; gap: 6px; flex: 1; font-size: 12px; color: var(--muted)"><span>Objetivo: 75 %</span><span style="display: flex; flex-direction: column; gap: 4px"><span style="height: 6px; border-radius: 4px; background: var(--accent); width: 90%"></span><span style="height: 6px; border-radius: 4px; background: var(--accent); opacity: .6; width: 62%"></span><span style="height: 6px; border-radius: 4px; background: var(--accent); opacity: .3; width: 34%"></span></span><span>Faltan 3 temas por reforzar</span></span></span>
 </div>
 <div style="position: absolute; width: clamp(220px, 19vw, 270px); padding: 16px; border-radius: 18px; background: var(--bg); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; right: 5%; top: 11%; transform: rotate(2deg)">
 <span style="display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; line-height: 1.15; letter-spacing: -0.01em"><span style="flex: 0 0 32px; width: 32px; height: 32px; border-radius: 9px; background: var(--accent); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--on-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6 M10 21h4 M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"></path></svg></span>Aprende de cada fallo</span>
@@ -378,6 +379,7 @@ export function Desktop() {
 </div>
 </section>
 
+</main>
 </div>
 
     </>

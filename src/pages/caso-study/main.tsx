@@ -15,4 +15,4 @@ function Caso() {
 }
 
 render(<Caso />, document.getElementById('app')!);
-pausarSecciones('.caso > section');
+pausarSecciones('.caso section');

@@ -24,7 +24,7 @@ textarea.field { resize: vertical; }
 .f-error { margin: 0; font-size: 14px; font-weight: 600; color: var(--accent-text); }
 .f-error a { color: inherit; }
 .f-nota { margin: 0; font-size: 13px; color: var(--muted); }
-.f-nota a { color: var(--fg); }
+.f-nota a { color: var(--fg); padding: 14px 0; }
 .trampa { display: none; }
 
 .enviado {

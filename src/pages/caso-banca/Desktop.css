@@ -45,7 +45,7 @@
 .v-esc .pc.go .det{animation:nowT .8s ease 1.6s both}
 @keyframes nowT{to{opacity:1;filter:none;transform:none}}
 .v-esc .stepb{transition:opacity .6s ease,filter .6s ease}
-.v-esc .bigf{opacity:.25;transform:translateY(20px)}
+.v-esc .bigf{opacity:1;transform:translateY(20px)}
 .v-esc .bigf.go{animation:bigf 1.6s cubic-bezier(.2,.8,.2,1) .4s both}
 @keyframes bigf{to{opacity:1;transform:none}}
 .v-esc .sweepr{animation:spin 4s linear infinite}
@@ -58,11 +58,11 @@
 .v-esc .bar{transition:width .7s cubic-bezier(.7,0,.2,1)}
 .v-esc .ln2{animation:nowT .45s cubic-bezier(.2,.8,.2,1) both;opacity:0;filter:blur(6px);transform:translateY(6px)}
 .v-esc .tile{transition:background .2s}
-.v-esc .tl .tli{opacity:.25;filter:blur(6px);transform:translateY(10px)}
+.v-esc .tl .tli{opacity:1;filter:blur(6px);transform:translateY(10px)}
 .v-esc .tl.go .tli{animation:nowT .9s cubic-bezier(.2,.8,.2,1) both}
 .v-esc .tl .tlbar{transform:scaleX(0);transform-origin:left}
 .v-esc .tl.go .tlbar{animation:arw 4.4s cubic-bezier(.4,0,.2,1) both}
-.v-esc .nums .num{opacity:.2;filter:blur(10px)}
+.v-esc .nums .num{opacity:1;filter:blur(10px)}
 .v-esc .nums.go .num{animation:nowT 1s cubic-bezier(.2,.8,.2,1) both}
 .v-esc .ico{transition:background .35s,border-color .35s,transform .35s}
 .v-esc .rng{width:100%;height:44px;margin:0;cursor:ew-resize}

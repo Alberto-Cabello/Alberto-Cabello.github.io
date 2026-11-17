@@ -213,7 +213,7 @@ export function Mobile({ modo, setModo }: { modo: Modo; setModo: (m: Modo) => vo
           )}
 
           <div ref={rCinta} style="border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 16px 0; overflow: hidden">
-            <p class="sr-only">Servicios: agentes de IA, automatizaciones, webs, software a medida y apps de formación.</p>
+            <p class="sr-only">Servicios: agentes de IA, automatizaciones, diseño y desarrollo web, software a medida y apps de formación.</p>
             <div class={`track track-m ${pzCinta}`} aria-hidden="true" style="font-weight: 800; font-size: 38px; letter-spacing: -0.04em; line-height: 1; white-space: nowrap">
               {[1, 2].map((m) => (
                 <span key={m} style="display: flex; gap: 24px; padding-right: 24px; align-items: center"><span>Agentes de IA</span><span style="color: var(--accent)">/</span><span class="hueca hueca-m">Automatizaciones</span><span style="color: var(--accent)">/</span><span>Webs</span><span style="color: var(--accent)">/</span><span class="hueca hueca-m">Software a medida</span><span style="color: var(--accent)">/</span><span>Apps de formación</span><span style="color: var(--accent)">/</span></span>

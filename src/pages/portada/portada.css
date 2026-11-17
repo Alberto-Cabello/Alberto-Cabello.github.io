@@ -93,6 +93,7 @@
 .door:hover .bl, .door:focus-visible .bl { left: 8px; bottom: 8px; }
 .door:hover .br, .door:focus-visible .br { right: 8px; bottom: 8px; }
 .door .ghost { position: absolute; right: 28px; bottom: -34px; font-weight: 800; font-size: 200px; line-height: 1; letter-spacing: -0.06em; color: var(--fg); opacity: .06; filter: blur(8px); transition: all .7s cubic-bezier(.2,.8,.2,1); pointer-events: none; }
+.door .ghost::after { content: attr(data-n); }
 .door:hover .ghost, .door:focus-visible .ghost { opacity: .22; filter: none; color: var(--accent); }
 .door .ds2 { opacity: 0; }
 .door:hover .ds1, .door:focus-visible .ds1 { opacity: 0; }

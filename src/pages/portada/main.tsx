@@ -35,3 +35,4 @@ function Portada() {
 }
 
 render(<Portada />, document.getElementById('app')!);
+document.addEventListener('visibilitychange', () => document.documentElement.classList.toggle('paused', document.hidden));

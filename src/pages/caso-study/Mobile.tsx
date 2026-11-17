@@ -14,6 +14,7 @@ export function Mobile() {
 <span style="font-weight: 800; font-size: 16px; letter-spacing: -0.02em">Alberto Cabello<span style="color: var(--accent)">.</span></span>
 <button type="button" onClick={v.toggle} aria-label={v.modeLabel} style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--fg); cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg></button>
 </header>
+<main>
 
 <section style="padding: 36px 16px 32px; display: flex; flex-direction: column; gap: 18px">
 <p class="fade" style="margin: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: var(--accent-text)">Caso 02 · Apps de formación a medida</p>
@@ -295,6 +296,7 @@ export function Mobile() {
 </div>
 </section>
 
+</main>
 </div>
 
     </>

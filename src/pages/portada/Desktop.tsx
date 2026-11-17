@@ -147,7 +147,7 @@ export function Desktop({ modo, setModo }: { modo: Modo; setModo: (m: Modo) => v
                   {PUERTAS.map((d) => (
                     <button type="button" class="door" key={d.n} onClick={(e) => elegir(d.modo, e.currentTarget)} aria-label={d.aria}>
                       <span class="bk tl" aria-hidden="true" /><span class="bk tr" aria-hidden="true" /><span class="bk bl" aria-hidden="true" /><span class="bk br" aria-hidden="true" />
-                      <span class="ghost" aria-hidden="true">{d.n}</span>
+                      <span class="ghost" aria-hidden="true" data-n={d.n} />
                       <span aria-hidden="true" style={`position: relative; display: flex; width: 100%; justify-content: space-between; align-items: center; ${MONO}; font-size: 12px; color: var(--muted)`}><span>Puerta {d.n}</span><span style="position: relative"><span class="ds1" style="transition: opacity .3s">○ sin enfocar</span><span class="ds2" style="position: absolute; right: 0; top: 0; white-space: nowrap; color: var(--accent-text); transition: opacity .3s">● enfocando</span></span></span>
                       <span aria-hidden="true" style="width: 52px; height: 52px; border-radius: 14px; background: var(--inner); display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d={d.icon} /></svg></span>
                       <span style="position: relative; font-weight: 800; font-size: clamp(30px, 3.2vw, 46px); line-height: 1; letter-spacing: -0.04em">{d.title}</span>
